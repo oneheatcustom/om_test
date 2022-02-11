@@ -1,0 +1,218 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2022-02-11 09:22:00",
+    "containerVersion": {
+        "path": "accounts/150413011/containers/13299180/versions/0",
+        "accountId": "150413011",
+        "containerId": "13299180",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/150413011/containers/13299180",
+            "accountId": "150413011",
+            "containerId": "13299180",
+            "name": "PMI - in.parimatch.com",
+            "publicId": "GTM-WPSKNM3",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1616076214238",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/150413011/containers/13299180/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "tagId": "2991",
+                "name": "pmi_bonus_25575_click_button",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  localStorage.setItem(\"25575\", true);\n</script>  "
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642760458072",
+                "firingTriggerId": [
+                    "2990"
+                ],
+                "parentFolderId": "1257",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "tagId": "3009",
+                "name": "pmi_bonus_25575_add_bonus",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nvar token = localStorage.getItem('token');\nvar campaignId = 25575;\nvar playerId = {{userID}};\n\nrequst({\n    \"playerId\": playerId,\n    \"brand\": \"IN\",\n    \"trigger\": campaignId,\n    \"sum\": 100,\n    \"campaignId\": campaignId\n})\n\nfunction requst(data) {\n    var xhr = new XMLHttpRequest();\n    var stringifiedData = JSON.stringify(data);\n\n    xhr.open('POST', \"/api/bonus\");\n    xhr.setRequestHeader('Content-type', 'application/json');\n    xhr.setRequestHeader('Authorization', \"Token \" + token);\n    xhr.send(stringifiedData);\n\n    xhr.onload = function () {\n        if (xhr.status.toString()[0] !== '2') {\n            console.error(xhr.status + '> ' + xhr.statusText);\n        }\n        console.log(\"PMI Bonus requst \" + campaignId + \" done\");\n    };\n}\n</script> "
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642760458076",
+                "firingTriggerId": [
+                    "3005",
+                    "2990"
+                ],
+                "parentFolderId": "1257",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "triggerId": "2990",
+                "name": "pmi_bonus_25575_click_button",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "en/psl-cashback-5-2"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Text}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "JOIN"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1642760672355",
+                "parentFolderId": "1257"
+            },
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "triggerId": "3005",
+                "name": "pmi_bonus_25575_add_bonus",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "login"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{eventAction}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "login_success"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pmi_bonus_25575_var}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1642760458071",
+                "parentFolderId": "1257"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "variableId": "3004",
+                "name": "pmi_bonus_25575_var",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function get_25575_var(){\nreturn localStorage.getItem(\"25575\");\n}"
+                    }
+                ],
+                "fingerprint": "1642760458075",
+                "parentFolderId": "1257",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "150413011",
+                "containerId": "13299180",
+                "folderId": "1257",
+                "name": "PMI Bonus",
+                "fingerprint": "1620386369669"
+            }
+        ],
+        "fingerprint": "1644571320060",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/150413011/containers/13299180/versions/0?apiLink=version"
+    }
+}
