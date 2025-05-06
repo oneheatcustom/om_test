@@ -1,4 +1,3 @@
-<script>
 	(function (d, r, b, h, s) {
 		h = d.getElementsByTagName('head')[0];
 		s = d.createElement('script');
@@ -14,4 +13,3 @@
                 }
 		});
 	});
-</script>
