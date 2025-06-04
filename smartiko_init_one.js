@@ -1,3 +1,10 @@
+
+   	const accountNumber = window._growthbookRenderer.context.attributes.accountNumber || null;
+	const language = 'EN' || null;
+
+	window._smartico_user_id = accountNumber;
+	window._smartico_language = language;
+
 	(function (d, r, b, h, s) {
 		h = d.getElementsByTagName('head')[0];
 		s = d.createElement('script');
