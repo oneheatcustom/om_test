@@ -43,14 +43,11 @@
 
   // Слухачі на pushState / replaceState
   window.addEventListener('pushState', () => {
-    console.log('📌 pushState');
     handleUrlChange();
   });
 
   window.addEventListener('replaceState', () => {
-    console.log('✏️ replaceState');
     handleUrlChange();
   });
 
-  console.log('✅ URL change tracker initialized');
 })();
