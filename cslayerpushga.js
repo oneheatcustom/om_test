@@ -39,13 +39,13 @@ function base64StringToJson(payload) {
     try {
         return JSON.parse(atob(payload));
     } catch (e) {
-        console.error('Failed to decode b64 string', payload, e);
+        //console.error('Failed to decode b64 string', payload, e);
     }
     return null;
 }
 
 function clickstreamTypeLog(typeOrSchema = '') {
-    console.group(`%cClickstream event: %c${typeOrSchema}`, 'color: #0066FF', 'font-weight: bold');
+    //console.group(`%cClickstream event: %c${typeOrSchema}`, 'color: #0066FF', 'font-weight: bold');
 }
 
 function clickstreamDebug(payload) {
@@ -66,8 +66,8 @@ function clickstreamDebug(payload) {
                             const eventName = match[2] + '_' + match[4];
                             const eventNameClean = match[2]; //
                             clickstreamTypeLog(`${match[2]}/${match[4]}`);
-                            console.info('Schema: %c' + ue.schema, 'font-weight: bold');
-                            console.info('Payload %o', ue.data);
+                            //console.info('Schema: %c' + ue.schema, 'font-weight: bold');
+                            //console.info('Payload %o', ue.data);
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({ event: eventNameClean, payload: ue.data});
 
@@ -78,7 +78,7 @@ function clickstreamDebug(payload) {
                     }
                     case 'pv': {
                         clickstreamTypeLog('page_view');
-                        console.info('URL: %s', event.url);
+                        //console.info('URL: %s', event.url);
                         break;
                     }
                     default:
@@ -86,23 +86,23 @@ function clickstreamDebug(payload) {
                         break;
                 }
 
-                console.info('Contexts', cx?.data || []);
-                console.groupCollapsed('%cDetails', 'color: gray');
-                console.info('%cEvent id:      ', 'font-weight: bold', event.eid);
-                console.info('%cDomain user id:', 'font-weight: bold', event.duid);
-                console.info('%cSession id:    ', 'font-weight: bold', event.sid);
-                console.info('%cApplication id:', 'font-weight: bold', event.aid);
-                console.groupEnd();
+                //console.info('Contexts', cx?.data || []);
+                //console.groupCollapsed('%cDetails', 'color: gray');
+                //console.info('%cEvent id:      ', 'font-weight: bold', event.eid);
+                //console.info('%cDomain user id:', 'font-weight: bold', event.duid);
+                //console.info('%cSession id:    ', 'font-weight: bold', event.sid);
+                //console.info('%cApplication id:', 'font-weight: bold', event.aid);
+                //console.groupEnd();
 
-                console.groupCollapsed('%cOriginal event', 'color: gray');
-                console.info(event);
-                console.groupEnd();
+                //console.groupCollapsed('%cOriginal event', 'color: gray');
+                //console.info(event);
+                //console.groupEnd();
 
-                console.groupEnd();
+                //console.groupEnd();
             });
         }
     } catch (e) {
-        console.error('Failed to log clickstream event', e, payload);
+        //console.error('Failed to log clickstream event', e, payload);
     }
 }
 
@@ -113,8 +113,6 @@ function init() {
         clickstreamDebug(data.payload);
     });
 
-    // injectScript();
-
     document.addEventListener('clickstreamDebugInj', (event) => {
         try {
             if (!event.detail) return;
@@ -122,7 +120,7 @@ function init() {
             const data = JSON.parse(event.detail.body);
             clickstreamDebug(data);
         } catch (e) {
-            console.error('Failed to deserialize clickstream event', e);
+            //console.error('Failed to deserialize clickstream event', e);
         }
     });
 }
