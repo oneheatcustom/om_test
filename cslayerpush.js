@@ -69,7 +69,7 @@ function clickstreamDebug(payload) {
                             console.info('Schema: %c' + ue.schema, 'font-weight: bold');
                             console.info('Payload %o', ue.data);
                             window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({ event: eventNameClean, ue.data});
+                            window.dataLayer.push({ event: eventNameClean, payload: ue.data});
 
                         } else {
                             clickstreamTypeLog();
