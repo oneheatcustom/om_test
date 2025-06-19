@@ -48,7 +48,7 @@
             </div>
             <div data-testid="modulor-bottom-sheet-buttons" class="modulor_bottom-sheet__button-docked__${suffix} modulor_bottom-sheet__vertical__${suffix}">
                 <button type="button"
-            id="play-now-btn"
+            id="vip_bonus_accept"
             data-id="wihraf_vustom_link"
             data-testid="modulor-button-button"
             class="modulor_button__button__${suffix} modulor_button__primary__${suffix} modulor_button__regular__${suffix}">
@@ -79,7 +79,7 @@
             el.remove();
         });
 
-    el.querySelector("#play-now-btn")?.addEventListener("click", () => {
+    el.querySelector("#vip_bonus_accept")?.addEventListener("click", () => {
         if (window._smartico && typeof window._smartico.action === "function") {
         window._smartico.action("custom_marketing_vip_action");
 
@@ -91,6 +91,8 @@
                 }
             })
         
+              localStorage.setItem("custom_vip_bonus_accepted_exp2277", true);
+
         setTimeout(() => {
             el.remove();
         }, 500);
