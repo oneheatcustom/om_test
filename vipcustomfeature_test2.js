@@ -29,7 +29,7 @@
             <div class="modulor_bottom-sheet__bottom-sheet__${suffix} modulor_bottom-sheet__expanded__${suffix} modulor_bottom-sheet__open__${suffix}" style="max-height: 812px;">
             <div class="modulor_bottom-sheet__container__${suffix}" style="max-height: 812px;">
                 <span class="modulor_bottom-sheet__swiper__${suffix}" data-testid="modulor-bottom-sheet-swiper"></span>
-                <div data-testid="modulor-bottom-sheet-header" class="modulor_bottom-sheet__header__${suffix} modulor_bottom-sheet__with-image__${suffix} modulor_bottom-sheet__hero__${suffix}" style="background-image: url(content//uploads/Frame_1948761616_629824ff05.png);">
+                <div data-testid="modulor-bottom-sheet-header" class="modulor_bottom-sheet__header__${suffix} modulor_bottom-sheet__with-image__${suffix} modulor_bottom-sheet__hero__${suffix}" style="background-image: url(content/uploads/Frame_1948761616_629824ff05.png);">
                 <div>
                     <div data-testid="modulor-navigation-bar" data-id="modulor-navigation-bar" data-component-name="modulor-navigation-bar" class="modulor_navigation-bar__transparent__${suffix}">
                     <div data-component-name="modulor-navigation-bar-layout" class="modulor_navigation-bar__layout__${suffix}" style="grid-template-columns: minmax(min-content, 1fr) auto minmax(min-content, 1fr);">
