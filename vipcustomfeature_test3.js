@@ -51,7 +51,7 @@
                 <div class="modulor_bottom-sheet__content__${suffix}" data-testid="modulor-bottom-sheet-content" style="padding-bottom: 88px;max-height: 698px;">
                 <span data-testid="modulor-bottom-sheet-title" data-id="modulor-bottom-sheet-title" data-component-name="modulor-typography" class="modulor_typography__tag__${suffix} large-title-semibold modulor_bottom-sheet__title__${suffix}">Boost it +15% 💥via Crypto!</span>
                 <span data-testid="modulor-bottom-sheet-description" data-id="modulor-bottom-sheet-description" data-component-name="modulor-typography" class="modulor_typography__tag__${suffix} body-regular modulor_bottom-sheet__description__${suffix}">Deposit more than ₹5K? Do it with crypto 🪙 to get +15% to your Live Casino transfer!
-☄️ Max Bonus = ₹60K ☄️</span>
+<br>☄️ Max Bonus = ₹60K ☄️</span>
                 </div>
             </div>
             <div data-testid="modulor-bottom-sheet-buttons" class="modulor_bottom-sheet__button-docked__${suffix} modulor_bottom-sheet__vertical__${suffix}">
